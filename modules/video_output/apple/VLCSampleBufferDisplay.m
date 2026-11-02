@@ -617,6 +617,13 @@ shouldInheritContentsScale:(CGFloat)newScale
 {
     return YES;
 }
+
+/* NSView answers NO for opaque views, which blocks dragging the window by the
+ * video (movableByWindowBackground). The legacy GL view allows it too. */
+- (BOOL)mouseDownCanMoveWindow
+{
+    return YES;
+}
 #endif
 
 /*
