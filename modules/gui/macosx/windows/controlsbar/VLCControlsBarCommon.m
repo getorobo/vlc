@@ -492,6 +492,7 @@
     self.timeSlider.indefinite = buffering;
     self.timeSlider.floatValue = validInputItem ? _playerController.position : 0.;
     self.timeSlider.mediaDuration = duration;
+    self.timeSlider.thumbnailInputItem = inputItem;
 
     [self.timeField setTime:timeString withRemainingTime:remainingTime];
     [self.trailingTimeField setTime:timeString withRemainingTime:remainingTime];

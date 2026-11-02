@@ -24,6 +24,8 @@
 
 #import <vlc_tick.h>
 
+@class VLCInputItem;
+
 @interface VLCPlaybackProgressSlider : NSSlider
 
 @property (readwrite, nonatomic) BOOL indefinite;
@@ -34,5 +36,9 @@
 
 /* Duration of the current item, used to compute the time shown on hover. */
 @property (readwrite, nonatomic) vlc_tick_t mediaDuration;
+
+/* Item to grab preview frames from while hovering. Local files only; nil or a
+ * stream disables the preview image and leaves just the time label. */
+@property (readwrite, nonatomic, strong, nullable) VLCInputItem *thumbnailInputItem;
 
 @end
